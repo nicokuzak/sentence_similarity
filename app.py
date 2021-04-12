@@ -14,8 +14,7 @@ def predict():
     """
     Returns the similarity of the two strings in the payload.
 
-    Sample cURL:
-    curl -X POST -H 'Content-Type: application/json' -i http://localhost:8080/predict -d '{"Age":40, "Fare":1000, "Sex":1, "Pclass":3,"SibSp":1}'
+    The data of the payload should have two key:value pairs, with the keys being named "text1" and "text2".
     """
     try:
         x = request.get_json(silent=True)
