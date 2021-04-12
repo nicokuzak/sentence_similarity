@@ -18,12 +18,9 @@ def predict():
     """
     try:
         x = request.get_json(silent=True)
-        print(type(x), x)
         t1, t2 = x['text1'], x['text2']
-        print('t1', type(t1), t1)
         res = similarity(t1, t2)
         return str(res)
-        # return jsonify(result=res)
 
     except Exception:
         return jsonify({'error': 'exception', 'trace': traceback.format_exc()})
@@ -48,6 +45,10 @@ def similarity(t1: str, t2: str) -> float:
         float: The similarity of the two strings computed by my algorithm.
     """
     # If they are the same, similarity == 1.0
+    if t1.strip() == '' or t2.strip() == '':
+        if t1 == t2:
+            return 1.0
+        return 0.0
     if t1 == t2:
         return 1.0
 
