@@ -11,4 +11,8 @@ Sentence similarity with only built-in libraries.
 
 ### Test out a few cURL requests
 
-Test out a few requests. An example is in req.ipynb
+Test out a few requests. An example is in req.ipynb.
+
+The data in the payload should contain two keys - "text1" and "text2", which are python strings. 
+
+The model will return a string with the similarity of two strings, between 0 and 1.
